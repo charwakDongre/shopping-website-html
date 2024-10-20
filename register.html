@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Clothing Shop</title>
+    <link rel="stylesheet" href="rstyles.css"> 
+</head>
+<body>
+    <div class="register-container">
+        <h1>Register</h1>
+        <form method="POST" action="register.php">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Create Account</button>
+        </form>
+        <div class="login-link">
+            <p>Already have an account? <a href="login.html">Login here</a></p>
+        </div>
+        
+        <!-- Error message placeholder -->
+        <div class="error-message">
+            <!-- This will be populated with error messages via PHP if needed -->
+            <?php
+            if (isset($_GET['error'])) {
+                echo htmlspecialchars($_GET['error']); // Display error message from URL if exists
+            }
+            ?>
+        </div>
+    </div>
+</body>
+</html>
